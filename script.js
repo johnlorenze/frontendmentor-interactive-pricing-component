@@ -8,6 +8,9 @@ let prices = ["$8.00", "$12.00", "$16.00", "$24.00", "$36.00"];
 
 slider.oninput = function () {
     let val = this.value;
+    let color = "linear-gradient(90deg, hsl(174, 77%, 80%) " + val + "%, hsl(224, 65%, 95%) " + val + "%)";
+    slider.style.background = color;
+
     let pageview_ = "";
     let pageviewPrice_ = "";
     if (val < 25) {
@@ -60,8 +63,8 @@ function getDiscount(price) {
     return "$" + totalValue.toFixed(2);
 }
 
-slider.addEventListener("mousemove", function () {
-    let val = slider.value;
-    let color = "linear-gradient(90deg, hsl(174, 77%, 80%) " + val + "%, hsl(224, 65%, 95%) " + val + "%)";
-    slider.style.background = color;
-});
+// slider.addEventListener("mousemove", function () {
+//     let val = slider.value;
+//     let color = "linear-gradient(90deg, hsl(174, 77%, 80%) " + val + "%, hsl(224, 65%, 95%) " + val + "%)";
+//     slider.style.background = color;
+// });
