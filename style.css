@@ -8,6 +8,10 @@ body {
     font-weight: 600;
 }
 
+*:focus {
+    outline: none;
+}
+
 .text-darkblue {
     color: hsl(227, 35%, 25%);
 }
@@ -96,6 +100,7 @@ body {
     background: linear-gradient(90deg, hsl(174, 77%, 80%) 50%, hsl(224, 65%, 95%) 50%);
     outline: none;
     opacity: 0.7;
+    border-style: none;
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
 }
