@@ -1,6 +1,7 @@
 let slider = document.getElementById("pageviews");
 let pageview = document.getElementById("pageview");
 let pageviewPrice = document.getElementById("pageviewPrice");
+let paymentType = document.getElementById("paymentType");
 let checkbox = document.getElementById("billing");
 let isChecked = false;
 let count = 2;
@@ -43,9 +44,11 @@ checkbox.onchange = function () {
     let newPrice = "";
     if (this.checked) {
         isChecked = true;
+        paymentType.innerHTML = "/ year";
         newPrice = getDiscount(price);
     } else {
         isChecked = false;
+        paymentType.innerHTML = "/ month";
         newPrice = prices[count];
     }
 
@@ -59,7 +62,7 @@ function getPrice(price) {
 function getDiscount(price) {
     let price_ = getPrice(price);
     let discount = 25 / 100;
-    let totalValue = price_ - (price_ * discount);
+    let totalValue = (price_ - (price_ * discount)) * 12;
     return "$" + totalValue.toFixed(2);
 }
 
